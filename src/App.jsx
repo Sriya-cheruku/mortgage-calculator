@@ -56,7 +56,7 @@ function App() {
   };
 
   return (
-    <div className="page">
+    <main className="page">
       <div className="calculator">
 
         <div className="form-side">
@@ -66,10 +66,11 @@ function App() {
           </div>
 
           <div className="input-group">
-            <label>Mortgage Amount</label>
+            <label htmlFor="amount">Mortgage Amount</label>
             <div className={`input-wrapper ${errors.amount ? "input-error" : ""}`}>
               <span className="input-prefix">£</span>
               <input
+                id="amount"
                 type="number"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
@@ -80,9 +81,10 @@ function App() {
 
           <div className="input-row">
             <div className="input-group">
-              <label>Mortgage Term</label>
+              <label htmlFor="term">Mortgage Term</label>
               <div className={`input-wrapper ${errors.term ? "input-error" : ""}`}>
                 <input
+                  id="term"
                   type="number"
                   value={term}
                   onChange={(e) => setTerm(e.target.value)}
@@ -93,9 +95,10 @@ function App() {
             </div>
 
             <div className="input-group">
-              <label>Interest Rate</label>
+              <label htmlFor="rate">Interest Rate</label>
               <div className={`input-wrapper ${errors.rate ? "input-error" : ""}`}>
                 <input
+                  id="rate"
                   type="number"
                   value={rate}
                   onChange={(e) => setRate(e.target.value)}
@@ -169,7 +172,7 @@ function App() {
         </div>
 
       </div>
-    </div>
+    </main>
   );
 }
 

@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --lime: hsl(61, 70%, 52%);
   --lime-hover: hsl(61, 70%, 72%);
@@ -15,11 +17,13 @@
   --white: hsl(0, 0%, 100%);
   --red: hsl(4, 69%, 50%);
 }
+
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--slate-100);
   font-size: 16px;
 }
+
 .page {
   display: flex;
   align-items: center;
@@ -27,6 +31,7 @@ body {
   min-height: 100vh;
   padding: 24px;
 }
+
 .calculator {
   display: flex;
   background-color: var(--white);
@@ -36,11 +41,13 @@ body {
   width: 100%;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 .form-side {
   flex: 1;
   padding: 40px;
   background-color: var(--white);
 }
+
 .results-side {
   flex: 1;
   padding: 40px;
@@ -51,7 +58,6 @@ body {
   flex-direction: column;
   justify-content: center;
 }
-
 
 .form-header {
   display: flex;
@@ -78,6 +84,12 @@ body {
 .clear-btn:hover {
   color: var(--slate-900);
 }
+
+.clear-btn:focus-visible {
+  outline: 2px solid var(--slate-900);
+  outline-offset: 2px;
+}
+
 .input-group {
   margin-bottom: 20px;
 }
@@ -89,11 +101,17 @@ body {
   color: var(--slate-700);
   margin-bottom: 8px;
 }
+
 .input-wrapper {
   display: flex;
   border: 1px solid var(--slate-300);
   border-radius: 8px;
   overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--lime);
 }
 
 .input-wrapper input {
@@ -105,6 +123,16 @@ body {
   font-weight: 700;
   color: var(--slate-900);
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .input-prefix {
@@ -124,6 +152,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .input-row {
   display: flex;
   gap: 20px;
@@ -132,6 +161,7 @@ body {
 .input-row .input-group {
   flex: 1;
 }
+
 .radio-option {
   display: flex;
   align-items: center;
@@ -143,11 +173,18 @@ body {
   margin-bottom: 8px;
   font-weight: 700;
   color: var(--slate-900);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .radio-option:hover {
   border-color: var(--lime);
 }
+
+.radio-option:has(input:checked) {
+  border-color: var(--lime);
+  background-color: hsla(61, 70%, 52%, 0.15);
+}
+
 .calculate-btn {
   display: flex;
   align-items: center;
@@ -164,11 +201,18 @@ body {
   cursor: pointer;
   margin-top: 12px;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background-color 0.2s ease;
 }
 
 .calculate-btn:hover {
   background-color: var(--lime-hover);
 }
+
+.calculate-btn:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
 .results-side h2 {
   font-size: 22px;
   font-weight: 700;
@@ -181,12 +225,14 @@ body {
   line-height: 1.6;
   margin-bottom: 32px;
 }
+
 .results-card {
   background-color: hsla(0, 0%, 0%, 0.25);
   border-radius: 8px;
   padding: 32px;
   border-top: 4px solid var(--lime);
 }
+
 .result-monthly {
   display: flex;
   flex-direction: column;
@@ -199,11 +245,13 @@ body {
   color: var(--lime);
   word-break: break-all;
 }
+
 .result-divider {
   border: none;
   border-top: 1px solid var(--slate-700);
   margin: 24px 0;
 }
+
 .result-total {
   display: flex;
   flex-direction: column;
@@ -215,10 +263,12 @@ body {
   font-weight: 700;
   color: var(--white);
 }
+
 .result-label {
   font-size: 14px;
   color: var(--slate-300);
 }
+
 .error-msg {
   color: var(--red);
   font-size: 12px;
@@ -229,4 +279,50 @@ body {
 
 .input-error {
   border-color: var(--red);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 0;
+  }
+
+  .calculator {
+    flex-direction: column;
+    border-radius: 0;
+  }
+
+  .form-side {
+    padding: 24px;
+  }
+
+  .results-side {
+    border-radius: 0;
+    padding: 24px;
+  }
+
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .form-header h1 {
+    font-size: 18px;
+  }
+
+  .result-amount {
+    font-size: 28px;
+  }
+
+  .result-total-amount {
+    font-size: 18px;
+  }
+
+  .results-card {
+    padding: 20px;
+  }
+
+  .calculate-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
 }
