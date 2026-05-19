@@ -62,13 +62,13 @@ function App() {
         <div className="form-side">
           <div className="form-header">
             <h1>Mortgage Calculator</h1>
-            <button className="clear-btn" onClick={clearAll}>Clear All</button>
+            <button type="button" className="clear-btn" onClick={clearAll}>Clear All</button>
           </div>
 
           <div className="input-group">
             <label htmlFor="amount">Mortgage Amount</label>
             <div className={`input-wrapper ${errors.amount ? "input-error" : ""}`}>
-              <span className="input-prefix">£</span>
+              <span className="input-prefix">&pound;</span>
               <input
                 id="amount"
                 type="number"
@@ -134,7 +134,7 @@ function App() {
             {errors.type && <span className="error-msg">{errors.type}</span>}
           </div>
 
-          <button className="calculate-btn" onClick={calculateRepayments}>
+          <button type="button" className="calculate-btn" onClick={calculateRepayments}>
             Calculate Repayments
           </button>
         </div>
@@ -144,7 +144,7 @@ function App() {
             <div>
               <h2>Your results</h2>
               <p>
-                Complete the form and click "calculate repayments" to see
+                Complete the form and click &ldquo;calculate repayments&rdquo; to see
                 what your monthly repayments would be.
               </p>
             </div>
@@ -154,17 +154,17 @@ function App() {
               <p>
                 Your results are shown below based on the information you
                 provided. To adjust the results, edit the form and click
-                "calculate repayments" again.
+                &ldquo;calculate repayments&rdquo; again.
               </p>
               <div className="results-card">
                 <div className="result-monthly">
                   <span className="result-label">Your monthly repayments</span>
-                  <span className="result-amount">£{result.monthly}</span>
+                  <span className="result-amount">&pound;{result.monthly}</span>
                 </div>
                 <hr className="result-divider" />
                 <div className="result-total">
-                  <span className="result-label">Total you'll repay over the term</span>
-                  <span className="result-total-amount">£{result.total}</span>
+                  <span className="result-label">Total you&#39;ll repay over the term</span>
+                  <span className="result-total-amount">&pound;{result.total}</span>
                 </div>
               </div>
             </div>

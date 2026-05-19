@@ -16,12 +16,13 @@
   --slate-900: hsl(202, 55%, 16%);
   --white: hsl(0, 0%, 100%);
   --red: hsl(4, 69%, 50%);
+  --shadow: 0 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
 }
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: var(--slate-100);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .page {
@@ -29,30 +30,30 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 24px;
+  padding: 1.5rem;
 }
 
 .calculator {
   display: flex;
   background-color: var(--white);
-  border-radius: 24px;
+  border-radius: 1.5rem;
   overflow: hidden;
-  max-width: 1000px;
+  max-width: 62.5rem;
   width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .form-side {
   flex: 1;
-  padding: 40px;
+  padding: 2.5rem;
   background-color: var(--white);
 }
 
 .results-side {
   flex: 1;
-  padding: 40px;
+  padding: 2.5rem;
   background-color: var(--slate-900);
-  border-radius: 0 0 0 80px;
+  border-radius: 0 0 0 5rem;
   color: var(--white);
   display: flex;
   flex-direction: column;
@@ -63,11 +64,11 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-block-end: 2rem;
 }
 
 .form-header h1 {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
   color: var(--slate-900);
 }
@@ -76,7 +77,7 @@ body {
   background: none;
   border: none;
   color: var(--slate-500);
-  font-size: 14px;
+  font-size: 0.875rem;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -86,28 +87,27 @@ body {
 }
 
 .clear-btn:focus-visible {
-  outline: 2px solid var(--slate-900);
-  outline-offset: 2px;
+  outline: 0.125rem solid var(--slate-900);
+  outline-offset: 0.125rem;
 }
 
 .input-group {
-  margin-bottom: 20px;
+  margin-block-end: 1.25rem;
 }
 
 .input-group label {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--slate-700);
-  margin-bottom: 8px;
+  margin-block-end: 0.5rem;
 }
 
 .input-wrapper {
   display: flex;
-  border: 1px solid var(--slate-300);
-  border-radius: 8px;
+  border: 0.0625rem solid var(--slate-300);
+  border-radius: 0.5rem;
   overflow: hidden;
-  transition: border-color 0.2s ease;
 }
 
 .input-wrapper:focus-within {
@@ -116,10 +116,10 @@ body {
 
 .input-wrapper input {
   flex: 1;
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--slate-900);
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -136,7 +136,7 @@ input[type="number"] {
 }
 
 .input-prefix {
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   background-color: var(--slate-100);
   color: var(--slate-700);
   font-weight: 700;
@@ -145,7 +145,7 @@ input[type="number"] {
 }
 
 .input-suffix {
-  padding: 12px 16px;
+  padding: 0.75rem 1rem;
   background-color: var(--slate-100);
   color: var(--slate-700);
   font-weight: 700;
@@ -155,7 +155,7 @@ input[type="number"] {
 
 .input-row {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .input-row .input-group {
@@ -165,15 +165,14 @@ input[type="number"] {
 .radio-option {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border: 1px solid var(--slate-300);
-  border-radius: 8px;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 0.0625rem solid var(--slate-300);
+  border-radius: 0.5rem;
   cursor: pointer;
-  margin-bottom: 8px;
+  margin-block-end: 0.5rem;
   font-weight: 700;
   color: var(--slate-900);
-  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .radio-option:hover {
@@ -189,19 +188,18 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
   width: 100%;
-  padding: 14px;
+  padding: 0.875rem;
   background-color: var(--lime);
   color: var(--slate-900);
   border: none;
-  border-radius: 40px;
-  font-size: 16px;
+  border-radius: 2.5rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  margin-top: 12px;
+  margin-block-start: 0.75rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  transition: background-color 0.2s ease;
 }
 
 .calculate-btn:hover {
@@ -209,38 +207,38 @@ input[type="number"] {
 }
 
 .calculate-btn:focus-visible {
-  outline: 2px solid var(--lime);
-  outline-offset: 2px;
+  outline: 0.125rem solid var(--lime);
+  outline-offset: 0.125rem;
 }
 
 .results-side h2 {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-block-end: 1rem;
 }
 
 .results-side p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--slate-300);
   line-height: 1.6;
-  margin-bottom: 32px;
+  margin-block-end: 2rem;
 }
 
 .results-card {
   background-color: hsla(0, 0%, 0%, 0.25);
-  border-radius: 8px;
-  padding: 32px;
-  border-top: 4px solid var(--lime);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border-top: 0.25rem solid var(--lime);
 }
 
 .result-monthly {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .result-amount {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--lime);
   word-break: break-all;
@@ -248,32 +246,32 @@ input[type="number"] {
 
 .result-divider {
   border: none;
-  border-top: 1px solid var(--slate-700);
-  margin: 24px 0;
+  border-top: 0.0625rem solid var(--slate-700);
+  margin-block: 1.5rem;
 }
 
 .result-total {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
 }
 
 .result-total-amount {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
 }
 
 .result-label {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--slate-300);
 }
 
 .error-msg {
   color: var(--red);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
-  margin-top: 8px;
+  margin-block-start: 0.5rem;
   display: block;
 }
 
@@ -281,7 +279,7 @@ input[type="number"] {
   border-color: var(--red);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .page {
     padding: 0;
   }
@@ -292,12 +290,12 @@ input[type="number"] {
   }
 
   .form-side {
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   .results-side {
     border-radius: 0;
-    padding: 24px;
+    padding: 1.5rem;
   }
 
   .input-row {
@@ -306,23 +304,29 @@ input[type="number"] {
   }
 
   .form-header h1 {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .result-amount {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .result-total-amount {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 
   .results-card {
-    padding: 20px;
+    padding: 1.25rem;
   }
 
   .calculate-btn {
-    font-size: 14px;
-    padding: 12px;
+    font-size: 0.875rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }
