@@ -1,4 +1,4 @@
-// App.jsx
+
 
 import { useState } from "react";
 
@@ -20,7 +20,7 @@ function App() {
           <label>Mortgage Amount</label>
 
           <div className="input-wrapper">
-            <span>$</span>
+            <span>€</span>
 
             <input
               type="number"
